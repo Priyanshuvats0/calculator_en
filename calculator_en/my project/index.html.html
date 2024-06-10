@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VATS_CALCULATOR</title>
+    <link rel="stylesheet" href="calc.css">
+</head>
+<body>
+  <div>
+    <h1 class="cal">
+      CALCULATOR
+    </h1>
+  </div>
+  <div class="area">
+    
+    <input type="text" class="input">
+   
+
+    </textarea>
+    <div>
+    <button class="one" onclick="add(1)">1</button>
+    <button class="tw" onclick="add(2)">2</button>
+    <button class="th" onclick="add(3)">3</button>
+    <button class="fo" onclick="add(4)">4</button>
+    <button class="pl" onclick="add(`+`)">+</button>
+  </div>
+    <div>
+    <button class="fi" onclick="add(5)">5</button>
+    <button class="si" onclick="add(6)">6</button>
+    <button class="sev" onclick="add(7)">7</button>
+    <button class="ei" onclick="add(8)">8</button>
+    <button class="div" onclick="add(`/`)">/</button>  
+  </div>
+    <button class="ze" onclick="add(0)">0</button>
+    <button class="ni" onclick="add(9)">9</button>
+    
+    <button class="min" onclick="add(`-`)">-</button>
+    <button class="mu" onclick="add(`*`)">*</button>
+
+    <button class="eq" onclick="calc(fo) ">=</button>
+    </div>
+      <script>
+         let result=0;
+         let numb2=0;
+      let arr=[];
+        let number=0;
+        let cnt=0;
+       let ji=String(result);
+    
+       let fo="";
+    
+     
+        function add(num){
+          arr=[];
+          let k=String(num);
+        // fo="";
+           fo=document.querySelector(".input").value+=k;
+           if(fo[0]==" "){
+            fo.remove(0,5)
+           }
+           console.log(fo);
+           console.log( fo.length)
+        }
+        
+        function calc(fo){
+      //  console.log(fo[5]);
+      number=0;
+      arr=[];
+          for(let i=0;i<fo.length;i++){
+            if((fo[i]!='+')&&(fo[i]!='-')&&(fo[i]!='*')&&(fo[i]!='/')){
+         
+                let yo= Number(fo.charAt(i));
+         
+                number=number*10+yo;
+                console.log(number);
+                
+                
+               
+              
+            }
+          
+            else{
+              
+              arr.push(number);
+              if(fo[i]=='+'){
+                arr.push("+")
+              }  
+              if(fo[i]=='-'){
+                arr.push("-")
+              } 
+              if(fo[i]=='*'){
+                arr.push("*")
+              } 
+              if(fo[i]=='/'){
+                arr.push("/")
+              } 
+              
+              number=0;
+            }
+            if(i==fo.length-1){
+            // console.log(number);
+              arr.push(number);
+              console.log(arr);
+              calculate(arr);
+            }
+            
+          } 
+         
+          function calculate(arr){
+            console.log(arr)
+            for(let i=0;i<arr.length;i++){
+              
+              if(arr[i]!='+'&&arr[i]!='-'&&arr[i]!='*'&&arr[i]!='/'){
+                numb2=arr[i];
+              }
+              else{
+                if(arr[i]=='+'){
+                  result=numb2+arr[i+1];
+                }
+                if(arr[i]=='-'){
+                  result=numb2-arr[i+1];
+                }
+                if(arr[i]=='*'){
+                 
+                  result=numb2*arr[i+1];
+                }
+                if(arr[i]=='/'){
+                  result=numb2/arr[i+1];
+                }
+              }
+              
+            }
+            arr=[];
+            document.querySelector(".input").value=result
+            ji=String(result);
+            fo="";
+            fo=ji;
+            arr=[];
+            console.log(arr);
+          
+           
+            // console.log(fo);
+       
+          
+          } 
+          // console.log(result);
+          // add(ji);
+           
+        
+          
+        }
+
+      </script>          
+
+
+</body>
+</html>

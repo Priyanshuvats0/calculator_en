@@ -1,0 +1,79 @@
+
+.area{
+margin: 200px;
+margin-top: 50px;
+align-items: center;
+  background-color: grey;
+  padding: 5px;
+  height: 200px;
+  width: 200px;
+  border: solid 5px rgba(51, 51, 51, 0.365);
+  border-radius: 10px;
+  background-image: url(download.jpg);
+  margin-left: 600px;
+ transition: box-shadow 0.3s ease,transform 0.3s ease;
+ 
+  
+  
+
+}
+.area:hover{
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.509);
+  transform: scale(1.1);
+}
+body{
+background-image: url(—Pngtree—cute\ hand\ drawn\ style\ mathematics_1176713.png);
+background-size: cover;
+
+}
+img{
+ height: 200px;
+ width: 200px;
+}
+button{
+  height: 35px;
+  width: 30px;
+  margin: 3px;
+  margin-top: 10px;
+  background-color: rgb(81, 81, 81);
+  color: whitesmoke;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+
+
+}
+/* button:hover{
+  background-color: white;
+  color:rgb(81, 81, 81);
+  
+} */
+button:hover {
+  background-color:rgba(255, 255, 255, 0.378);
+  color: black;
+  transform: scale(1.2);
+}
+
+button:active {
+  transform: scale(1.1);
+}
+.input{
+  border-radius: 10px;
+  border: solid 2px ;
+  height: 30px;
+  width: 180px;
+  margin-left: 5px;
+  margin-bottom: 3px;
+  background-color: rgba(255, 255, 255, 0.614);
+
+ font-size: large;
+}
+.pl,.mi,.mu,.div,.eq,button{
+  background-color: rgba(33, 33, 33, 0.534)
+}
+.cal{
+  margin-left: 600px;
+  margin-top: 150px;
+ 
+}
